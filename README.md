@@ -1,3 +1,6 @@
+![](https://img.shields.io/packagist/dt/whchi/nova-tags-input?style=flat-square) ![](https://img.shields.io/packagist/v/whchi/nova-tags-input?style=flat-square&color=blue)
+
+
 # About
 A simple wrapper of [vue-tags-input](http://www.vue-tags-input.com) for laravel nova
 
