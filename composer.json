@@ -1,0 +1,36 @@
+{
+    "name": "whchi/nova-tags-input",
+    "description": "Vue-tags-input field for Laravel Nova.",
+    "authors": [
+        {
+            "name": "Dylan chi",
+            "homepage": "https://whchi.github.io"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "nova",
+        "tags-input"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Whchi\\NovaTagsInput\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Whchi\\NovaTagsInput\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
