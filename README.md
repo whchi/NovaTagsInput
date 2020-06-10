@@ -31,7 +31,6 @@ return [
         'allow-edit-tags' => false,
         'autocomplete-always-open' => false,
         'autocomplete-filter-duplicates' => true,
-        'autocomplete-items' => [],
         'autocomplete-min-length' => 1,
         'avoid-adding-duplicates' => true,
         'delete-on-backspace' => true,
