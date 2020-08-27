@@ -28,6 +28,10 @@ export default {
 
   props: ['resourceName', 'resourceId', 'field'],
 
+  created() {
+    this.initStyles()
+  },
+
   mounted() {
     // Set up default parameters
     this.autocompleteItems = this.field.autocompleteItems
@@ -36,6 +40,11 @@ export default {
   },
 
   methods: {
+    initStyles() {
+      for (const [k, v] of Object.entries(this.field.style_variables)) {
+        document.documentElement.style.setProperty(k, v)
+      }
+    },
     /*
      * Set the initial, internal value for the field.
      */

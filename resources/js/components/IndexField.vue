@@ -15,6 +15,9 @@ export default {
     }
   },
   props: ['resourceName', 'field'],
+  created() {
+    this.initStyles()
+  },
   mounted() {
     vm = this
     this.newField = this.field
@@ -27,6 +30,13 @@ export default {
       this.fieldLabel =
         '<div class="' + this.tagsWrapperClass + '">' + vm.tags + '</div>'
     }
+  },
+  methods: {
+    initStyles() {
+      for (const [k, v] of Object.entries(this.field.style_variables)) {
+        document.documentElement.style.setProperty(k, v)
+      }
+    },
   },
 }
 </script>

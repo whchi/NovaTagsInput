@@ -19,12 +19,13 @@ class Tags extends Field
         parent::__construct($name, $attribute, $resolveCallback);
         $this->withMeta([
             'props' => config('nova_tags_input.props'),
+            'style_variables' => config('nova_tags_input.style_variables')
         ]);
     }
 
     protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
     {
-        if ($request->exists($requestAttribute) && is_array($request->{$requestAttribute})) {
+        if ($request->exists($requestAttribute)) {
 
             $attributes = json_decode($request[$requestAttribute], true);
 
