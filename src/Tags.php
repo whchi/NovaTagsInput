@@ -24,7 +24,7 @@ class Tags extends Field
 
     protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
     {
-        if ($request->exists($requestAttribute)) {
+        if ($request->exists($requestAttribute) && is_array($request->{$requestAttribute})) {
 
             $attributes = json_decode($request[$requestAttribute], true);
 
