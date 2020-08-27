@@ -4,7 +4,7 @@ return [
     'style_variables' => [
         // index, detail field
         '--nti-tag-bgcolor' => 'var(--primary)',
-        '--nti-tag-mr' => '10px',
+        '--nti-tag-mr' => '5px',
         '--nti-tag-color' => '#fff',
         // form field
         '--ti-valid-bgcolor' => 'var(--primary)',

@@ -1,6 +1,9 @@
 ![](https://img.shields.io/packagist/dt/whchi/nova-tags-input?style=flat-square) ![](https://img.shields.io/packagist/v/whchi/nova-tags-input?style=flat-square&color=blue)
 
-
+# release note
+* 0.0.2
+1. add custom styles support
+2. fix required rule validation
 # About
 A simple wrapper of [vue-tags-input](http://www.vue-tags-input.com) for laravel nova
 
@@ -22,7 +25,16 @@ php artisan vendor:publish --provider="Whchi\NovaTagsInput\FieldServiceProvider"
 change whatever you want in `config/nova_tags_input.php`
 ```php
 return [
-    'classes' => '',
+    'style_variables' => [
+        // index, detail field
+        '--nti-tag-bgcolor' => 'var(--primary)',
+        '--nti-tag-mr' => '5px',
+        '--nti-tag-color' => '#fff',
+        // form field
+        '--ti-valid-bgcolor' => 'var(--primary)',
+        '--ti-deletion-mark-bgcolor' => 'var(--danger)',
+        '--ti-selected-item-bgcolor' => 'var(--primary)',
+    ],
     'props' => [
         'add-from-paste' => true,
         'add-on-blur' => true,
@@ -54,5 +66,3 @@ Below is an example saving in your column
 ```json
 [{"text": "test"}, {"text": "中文字串"}]
 ```
-# TODO
-- [ ] support custom css class
