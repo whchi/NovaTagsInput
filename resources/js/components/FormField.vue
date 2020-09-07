@@ -64,7 +64,7 @@ export default {
      * Fill the given FormData object with the field's internal value.
      */
     fill(formData) {
-      let val = this.tags.length ? JSON.stringify(this.tags) : []
+      let val = this.tags.length ? JSON.stringify(this.tags) : '[]'
       formData.append(this.field.attribute, val)
     },
 
