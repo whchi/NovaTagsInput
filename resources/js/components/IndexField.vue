@@ -3,7 +3,7 @@
 </template>
 
 <script>
-let vm
+let vm;
 
 export default {
   data() {
@@ -12,31 +12,35 @@ export default {
       fieldLabel: '',
       tagsWrapperClass: 'nti-tags-wrapper',
       tagClass: 'nti-tag',
-    }
+    };
   },
   props: ['resourceName', 'field'],
   created() {
-    this.initStyles()
+    this.initStyles();
   },
   mounted() {
-    vm = this
-    this.newField = this.field
-    if (this.field.value && this.field.value !== '[]') {
-      let items = JSON.parse(this.field.value)
-      items.forEach(function(item, index) {
-        vm.tags += '<span class="' + vm.tagClass + '">' + item.text + '</span>'
-      })
-
+    vm = this;
+    this.newField = this.field;
+    let items = null;
+    if (this.field.value) {
+      if (Array.isArray(this.field.value)) {
+        items = this.field.value;
+      } else {
+        items = JSON.parse(this.field.value);
+      }
+      items.forEach(function (item, index) {
+        vm.tags += '<span class="' + vm.tagClass + '">' + item.text + '</span>';
+      });
       this.fieldLabel =
-        '<div class="' + this.tagsWrapperClass + '">' + vm.tags + '</div>'
+        '<div class="' + this.tagsWrapperClass + '">' + vm.tags + '</div>';
     }
   },
   methods: {
     initStyles() {
       for (const [k, v] of Object.entries(this.field.style_variables)) {
-        document.documentElement.style.setProperty(k, v)
+        document.documentElement.style.setProperty(k, v);
       }
     },
   },
-}
+};
 </script>

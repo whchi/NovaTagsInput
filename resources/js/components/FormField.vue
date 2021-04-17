@@ -49,9 +49,13 @@ export default {
      * Set the initial, internal value for the field.
      */
     setInitialValue() {
-      this.value = ''
-      this.value = JSON.parse(this.field.value) || ''
-      if (this.value !== '') {
+      this.value = null
+      if (Array.isArray(this.field.value)) {
+          this.value = this.field.value
+      } else {
+        this.value = JSON.parse(this.field.value) || []
+      }
+      if (this.value.length) {
         let tags = []
         this.value.forEach(function(item, index) {
           tags.push(item)
